@@ -9,7 +9,7 @@ def v(u, l):
     v = -u + (l ** 2) * (u ** 2) / 2 - (l ** 2) * (u ** 3)
     return v
 
-class OrbitaCorposMassivos:
+class OrbitaPotencialCorposMassivos:
     umax = 0
     umin = 0
     vmin = 0
