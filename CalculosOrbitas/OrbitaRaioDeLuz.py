@@ -1,3 +1,4 @@
+from http.client import HTTPResponse
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
@@ -8,7 +9,7 @@ from matplotlib.patches import Circle
 
 class OrbitaRaioDeLuz:
     # d = Escolha o valor do parâmetro de impacto $d$ (em km): 
-    def calcular(self, v0):
+    def calcular_raio_luz(self, v0):
         d = eval(v0)
 
         rs_sun = 3  # Hipótese sobre o raio de Schwarzschild do corpo central (em km). Ligeiramente maior que o do Sol.
@@ -146,4 +147,6 @@ class OrbitaRaioDeLuz:
 
         ani2 = FuncAnimation(fig, animate, frames=range(0, len(x), skipframes), interval=10, blit=True,repeat=False)
 
-        plt.show() # Vai continuar fazendo o plot, mas acredito que não funcione para WEB
+        response = HTTPResponse(mimetype="image/png")
+        plt.savefig(response, format="png")
+        return response

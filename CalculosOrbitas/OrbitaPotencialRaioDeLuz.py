@@ -30,7 +30,7 @@ class OrbitaPotencialRaioDeLuz:
         self.tp3 = self.roots[0]
         self.eps = 0.000000001
 
-    def calcularOrbita(self):
+    def calcular_orbita_potencial_raio_luz(self):
         if self.k == self.wmax:
             phi = np.arange(0, 2 * math.pi, math.pi / 500)
             rmax = [1 / self.umax] * len(phi)

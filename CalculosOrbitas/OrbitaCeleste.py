@@ -1,3 +1,4 @@
+from http.client import HTTPResponse
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
@@ -7,9 +8,9 @@ from matplotlib.animation import FuncAnimation, writers
 from matplotlib.patches import Circle
 
 class OrbitaCeleste:
-    # x0 = Escolha o valor da posição inicial (em km): 
-    # v0 = Escolha o valor da velocidade inicial (em unidades da velocidade da luz):
-    def calcular(self, posicaoInicial, velocidadeInicial):
+    # posicaoInicial = Escolha o valor da posição inicial (em km): 
+    # velocidadeInicial = Escolha o valor da velocidade inicial (em unidades da velocidade da luz):
+    def calcular_celeste(self, posicaoInicial, velocidadeInicial):
         x0 = eval(posicaoInicial)
         v0 = eval(velocidadeInicial)
 
@@ -184,4 +185,6 @@ class OrbitaCeleste:
 
         ani = FuncAnimation(fig, animate, frames=range(0, len(x), skipframes), interval=30, blit=True,repeat=False)
 
-        plt.show() # Vai continuar fazendo o plot, mas acredito que não funcione para WEB
+        response = HTTPResponse(mimetype="image/png")
+        plt.savefig(response, format="png")
+        return response

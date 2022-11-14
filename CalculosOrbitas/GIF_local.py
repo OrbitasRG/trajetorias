@@ -8,7 +8,7 @@ if tipo_orbita == "M":
     v0 = input("Escolha o valor da velocidade inicial (em unidades da velocidade da luz): ")
 
     orbitaCeleste = OrbitaCeleste.OrbitaCeleste()
-    orbitaCeleste.calcular(x0, v0)
+    orbitaCeleste.calcular_celeste(x0, v0)
 
 if tipo_orbita == "L":
     v0 = input("Escolha o valor do parâmetro de impacto $d$ (em km): ")

@@ -25,5 +25,5 @@ else:
     impacto = input("Escolha o valor do parâmetro de impacto 'd', em unidades de $r_g$: ")
     orbitaPotencialRaioDeLuz = OrbitaPotencialRaioDeLuz.OrbitaPotencialRaioDeLuz(impacto)
 
-    orbitaPotencialRaioDeLuz.calcularOrbita()
+    orbitaPotencialRaioDeLuz.calcular_orbita_potencial_raio_luz()
         
