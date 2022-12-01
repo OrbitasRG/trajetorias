@@ -1,0 +1,22 @@
+name: CI - Create Docker Image for Potencial
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: satackey/action-docker-layer-caching@v0.0.11
+      continue-on-error: true
+      
+    - name: Build the Docker image for Potencial
+      run: docker build ./Potencial --tag potencial:$(date +%s)
+
