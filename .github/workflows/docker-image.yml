@@ -1,0 +1,22 @@
+name: Create Docker Image for Potencial and Orbitas
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image for Potencial
+      run: docker build . --file ./Potencial/Dockerfile --tag potencial:$(date +%s)
+      
+    - name: Build the Docker image for Orbitas
+      run: docker build . --file ./GIFs/Dockerfile --tag potencial:$(date +%s)
+
