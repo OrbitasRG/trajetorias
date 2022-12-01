@@ -1,0 +1,9 @@
+altair
+pandas
+streamlit
+numpy
+sympy
+scipy
+matplotlib
+streamlit_option_menu
+IPython
