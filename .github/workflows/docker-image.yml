@@ -15,8 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image for Potencial
-      run: docker build . --file ./Potencial/Dockerfile --tag potencial:$(date +%s)
+      run: docker build ./Potencial --tag potencial:$(date +%s)
       
     - name: Build the Docker image for Orbitas
-      run: docker build . --file ./GIFs/Dockerfile --tag potencial:$(date +%s)
+      run: docker build ./GIFs --tag potencial:$(date +%s)
 
